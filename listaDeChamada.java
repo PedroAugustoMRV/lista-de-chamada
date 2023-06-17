@@ -64,11 +64,11 @@ class ListaDeChamada {
 
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("|-----------------------------------------------------------|");
+        System.out.println("|---------------------------------------------------------------------------------------------|");
         System.out.println("|------------------------------         Gerenciar Alunos        ------------------------------|");
-        System.out.println("|-----------------------------------------------------------|");
+        System.out.println("|---------------------------------------------------------------------------------------------|");
         System.out.println("| [1] - Adicionar alunos [2] - Ver Alunos [3] - Editar Aluno [4] - Remover Aluno [5] - Voltar |");
-        System.out.println("|-----------------------------------------------------------|");
+        System.out.println("|---------------------------------------------------------------------------------------------|");
 
         int opcao = teclado.nextInt();
         teclado.nextLine(); // Limpar o buffer de entrada
@@ -109,6 +109,9 @@ class ListaDeChamada {
         boolean laco = true;
 
         while (laco && indiceAluno < alunos.length) {
+            System.out.println("|---------------------------------------------------------------------------------------------|");
+            System.out.println("|---------------------------------         Inseri Nome        --------------------------------|");
+            System.out.println("|---------------------------------------------------------------------------------------------|");
             System.out.println("| Por favor, insira o nome do aluno:                                                          |");
             System.out.println("|---------------------------------------------------------------------------------------------|");
             alunos[indiceAluno] = teclado.nextLine();
@@ -118,16 +121,16 @@ class ListaDeChamada {
                 laco = false;
                 System.out.println("| Máximo de alunos que você pode registrar é " + alunos.length + "!!!                                              |");
                 System.out.println("|---------------------------------------------------------------------------------------------|");
-                System.out.println("| Pressione Enter para voltar...                                                               |");
+                System.out.println("| Pressione Enter para voltar...                                                              |");
                 teclado.nextLine();
             } else {
-                System.out.println("| Aluno registrado com sucesso!                                                                 |");
+                System.out.println("| Aluno registrado com sucesso!                                                               |");
                 System.out.println("|---------------------------------------------------------------------------------------------|");
-                System.out.println("| [1] - Adicionar outro aluno [0] - Voltar ao Menu                                             |");
+                System.out.println("| [1] - Adicionar outro aluno [0] - Voltar ao Menu                                            |");
 				
 		if (!teclado.hasNextInt()) {
     System.out.println("| Opção selecionada inválida!");
-    System.out.println("|-----------------------------------------------------------|");
+    System.out.println("|------------------------------------------------------------|");
     teclado.nextLine(); // Limpar a entrada inválida
 
     // Exibir novamente a pergunta e aguardar uma entrada válida
@@ -140,7 +143,7 @@ class ListaDeChamada {
         laco = false;
         menuGerenciaAlunos();
     } else if (opcao == 1) {
-        System.out.println("| [1] - Adicionar outro aluno [0] - Voltar ao Menu                                             |");
+        System.out.println("| [1] - Adicionar outro aluno [0] - Voltar ao Menu          |");
         // Continuar adicionando outro aluno
     } else {
         System.out.println("| Opção selecionada inválida!");
@@ -158,10 +161,10 @@ class ListaDeChamada {
     public static void exibirAlunos() {
         limparConsole();
 
-        System.out.println("|-----------------------------------------------------------|");
+        System.out.println("|------------------------------------------------------------------|");
         System.out.println("|---------------------         Alunos         ---------------------|");
-        System.out.println("|-----------------------------------------------------------|");
-        System.out.println("| Alunos registrados:                                      |");
+        System.out.println("|------------------------------------------------------------------|");
+        System.out.println("| Alunos registrados:                                              |");
 
         for (String aluno : alunos) {
             if (aluno != null) {
@@ -183,10 +186,10 @@ class ListaDeChamada {
 
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("|-----------------------------------------------------------|");
+        System.out.println("|-----------------------------------------------------------------|");
         System.out.println("|------------------         Editar Aluno         -----------------|");
-        System.out.println("|-----------------------------------------------------------|");
-        System.out.println("| Alunos registrados:                                      |");
+        System.out.println("|-----------------------------------------------------------------|");
+        System.out.println("| Alunos registrados:                                             |");
 
         for (int i = 0; i < alunos.length; i++) {
             if (alunos[i] != null) {
@@ -201,11 +204,11 @@ class ListaDeChamada {
         teclado.nextLine(); // Limpar o buffer de entrada
 
         if (opcao >= 0 && opcao < alunos.length && alunos[opcao] != null) {
-            System.out.println("| Insira o novo nome do aluno:                              |");
+            System.out.println("| Insira o novo nome do aluno:                             |");
             alunos[opcao] = teclado.nextLine();
             System.out.println("| Aluno editado com sucesso!                               |");
         } else {
-            System.out.println("| Opção inválida. Por favor, insira uma opção válida.       |");
+            System.out.println("| Opção inválida. Por favor, insira uma opção válida.      |");
         }
 
         System.out.println("|-----------------------------------------------------------|");
@@ -220,10 +223,10 @@ class ListaDeChamada {
 
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("|-----------------------------------------------------------|");
+        System.out.println("|------------------------------------------------------------------|");
         System.out.println("|------------------         Remover Aluno         -----------------|");
-        System.out.println("|-----------------------------------------------------------|");
-        System.out.println("| Alunos registrados:                                      |");
+        System.out.println("|------------------------------------------------------------------|");
+        System.out.println("| Alunos registrados:                                              |");
 
         for (int i = 0; i < alunos.length; i++) {
             if (alunos[i] != null) {
@@ -239,9 +242,9 @@ class ListaDeChamada {
 
         if (opcao >= 0 && opcao < alunos.length && alunos[opcao] != null) {
             alunos[opcao] = null;
-            System.out.println("| Aluno removido com sucesso!                               |");
+            System.out.println("| Aluno removido com sucesso!                           |");
         } else {
-            System.out.println("| Opção inválida. Por favor, insira uma opção válida.       |");
+            System.out.println("| Opção inválida. Por favor, insira uma opção válida.   |");
         }
 
         System.out.println("|-----------------------------------------------------------|");
@@ -256,11 +259,11 @@ class ListaDeChamada {
 
         Scanner teclado = new Scanner(System.in);
 
-        System.out.println("|-----------------------------------------------------------|");
-        System.out.println("|----------------   Gerenciar Chamadas   ---------------------|");
-        System.out.println("|-----------------------------------------------------------|");
-        System.out.println("| [1] - Fazer Chamada [2] - Ver Chamadas [3] - Voltar        |");
-        System.out.println("|-----------------------------------------------------------|");
+        System.out.println("|------------------------------------------------------|");
+        System.out.println("|---------------   Gerenciar Chamadas   ---------------|");
+        System.out.println("|------------------------------------------------------|");
+        System.out.println("| [1] - Fazer Chamada [2] - Ver Chamadas [3] - Voltar  |");
+        System.out.println("|------------------------------------------------------|");
 
         int opcao = teclado.nextInt();
         teclado.nextLine(); // Limpar o buffer de entrada
@@ -286,78 +289,78 @@ class ListaDeChamada {
     }
 
     public static void fazerChamada() {
-  limparConsole();
-  
-  Scanner teclado = new Scanner(System.in);
-  
-  System.out.println("|-----------------------------------------------------------|");
-  System.out.println("|---------------- Fazer Chamada -----------------|");
-  System.out.println("|-----------------------------------------------------------|");
-  System.out.println("| Alunos registrados: |");
-  
-  for (int i = 0; i < alunos.length; i++) {
-    if (alunos[i] != null) {
-      System.out.println("| [" + i + "] - " + alunos[i]);
-    }
-  }
-  
-  System.out.println("|-----------------------------------------------------------|");
-  System.out.println("| Insira o número do aluno presente na chamada (ou -1 para sair):");
-  
-  int opcao = teclado.nextInt();
-  teclado.nextLine(); // Limpar o buffer de entrada
-  
-  if (opcao >= -1 && opcao < alunos.length) {
-    if (opcao == -1) {
-      gerenciarChamadasSubMenu();
-    } else if (alunos[opcao] != null) {
-      if (chamadas.contains(alunos[opcao])) {
-        System.out.println("| Chamada já registrada para o aluno: " + alunos[opcao]);
-      } else {
-        chamadas.add(alunos[opcao]);
-        System.out.println("| Chamada registrada para o aluno: " + alunos[opcao]);
-      }
-    } else {
-      System.out.println("| Aluno não existe. Por favor, insira um número válido.");
-    }
-  } else {
-    System.out.println("| Opção inválida. Por favor, insira uma opção válida.");
-  }
-  
-  System.out.println("|-----------------------------------------------------------|");
-  System.out.println("| Pressione Enter para continuar...");
-  teclado.nextLine();
-  
-  fazerChamada();
-}
+	  limparConsole();
+	  
+	  Scanner teclado = new Scanner(System.in);
+	  
+	  System.out.println("|------------------------------------------------|");
+	  System.out.println("|---------------- Fazer Chamada -----------------|");
+	  System.out.println("|------------------------------------------------|");
+	  System.out.println("| Alunos registrados:                            |");
+	  
+	  for (int i = 0; i < alunos.length; i++) {
+		if (alunos[i] != null) {
+		  System.out.println("| [" + i + "] - " + alunos[i]);
+		}
+	  }
+	  
+	  System.out.println("|----------------------------------------------------------------|");
+	  System.out.println("| Insira o número do aluno presente na chamada (ou -1 para sair):|");
+	  
+	  int opcao = teclado.nextInt();
+	  teclado.nextLine(); // Limpar o buffer de entrada
+	  
+	  if (opcao >= -1 && opcao < alunos.length) {
+		if (opcao == -1) {
+		  gerenciarChamadasSubMenu();
+		} else if (alunos[opcao] != null) {
+		  if (chamadas.contains(alunos[opcao])) {
+			System.out.println("| Chamada já registrada para o aluno: " + alunos[opcao]);
+		  } else {
+			chamadas.add(alunos[opcao]);
+			System.out.println("| Chamada registrada para o aluno: " + alunos[opcao]);
+		  }
+		} else {
+		  System.out.println("| Aluno não existe. Por favor, insira um número válido.");
+		}
+	  } else {
+		System.out.println("| Opção inválida. Por favor, insira uma opção válida.");
+	  }
+	  
+	  System.out.println("|-----------------------------------------------------------|");
+	  System.out.println("| Pressione Enter para continuar...                         |");
+	  teclado.nextLine();
+	  
+	  fazerChamada();
+	}
 
 
    public static void verChamadas() {
-  limparConsole();
-  
-  System.out.println("|-----------------------------------------------------------|");
-  System.out.println("|---------------- Chamadas Registradas ----------------|");
-  System.out.println("|-----------------------------------------------------------|");
-  System.out.println("| Chamadas realizadas: |");
-  
-  for (String aluno : alunos) {
-    if (aluno != null) {
-      if (chamadas.contains(aluno)) {
-        System.out.println("| " + aluno + " - PRESENTE");
-      } else {
-        System.out.println("| " + aluno + " - NÃO PRESENTE");
-      }
-    }
-  }
-  
-  System.out.println("|-----------------------------------------------------------|");
-  System.out.println("| Pressione Enter para voltar... |");
-  
-  Scanner teclado = new Scanner(System.in);
-  teclado.nextLine();
-  
-  gerenciarChamadasSubMenu();
-}
+	  limparConsole();
+	  
+	  System.out.println("|------------------------------------------------------|");
+	  System.out.println("|---------------- Chamadas Registradas ----------------|");
+	  System.out.println("|------------------------------------------------------|");
+	  System.out.println("| Chamadas realizadas:                                 |");
+	  
+	  for (String aluno : alunos) {
+		if (aluno != null) {
+		  if (chamadas.contains(aluno)) {
+			System.out.println("| " + aluno + " - PRESENTE");
+		  } else {
+			System.out.println("| " + aluno + " - NÃO PRESENTE");
+		  }
+		}
+	  }
+	  
+	  System.out.println("|-----------------------------------------------------------|");
+	  System.out.println("| Pressione Enter para voltar... |");
+	  
+	  Scanner teclado = new Scanner(System.in);
+	  teclado.nextLine();
+	  
+	  gerenciarChamadasSubMenu();
+	}
 
     public static void sair() {
         limparConsole();
